@@ -1,0 +1,7 @@
+<h1>{{ randomId() }}</h1>
+<input
+  type="button"
+  value="Generate Random Card"
+  (click)="generateRandomCard()"
+/>
+<pre>{{ pokemon() | json }}</pre>
