@@ -1,0 +1,16 @@
+p {
+  font-size: 35px;
+}
+
+.pokemon-noValid {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.pokemon-gif {
+  max-width: 50%;
+  max-height: 50%;
+}
