@@ -1,7 +1,18 @@
-<h1>{{ randomId() }}</h1>
-<input
-  type="button"
-  value="Generate Random Card"
-  (click)="generateRandomCard()"
-/>
-<pre>{{ pokemon() | json }}</pre>
+<div class="button-container">
+  <button matFab class="button-search" (click)="generateRandomCard()">
+    <mat-icon>shuffle</mat-icon>
+    Random Search
+  </button>
+</div>
+@if(loading()) {
+<div class="pokemon-loading">
+  <img src="assets/pokemon-loading.gif" alt="Loading..." />
+</div>
+}@else {
+<div class="pokemon-card" [style.backgroundColor]="pokemon()?.colorType">
+  <label class="pokemon-id">#{{ pokemon()?.id }}</label>
+  <img src="{{ pokemon()?.image }}" alt="staryu" class="pokemon-image" />
+  <h2 class="pokemon-name">{{ pokemon()?.name }}</h2>
+  <label class="pokemon-type">Type: {{ pokemon()?.type }}</label>
+</div>
+}

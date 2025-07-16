@@ -1,1 +1,26 @@
-<p>hello pokemon !</p>
+<div class="pokemon-card" [style.backgroundColor]="pokemon()?.colorType">
+  <label class="pokemon-id">#{{ pokemon()?.id }}</label>
+  <img src="{{ pokemon()?.image }}" alt="staryu" class="pokemon-image" />
+  <h2 class="pokemon-name">{{ pokemon()?.name }}</h2>
+  <label class="pokemon-type">Type: {{ pokemon()?.type }}</label>
+</div>
+<div class="button-container">
+  <button
+    matFab
+    class="button-nav"
+    (click)="navPokemon('previous')"
+    [disabled]="previousDisabled"
+  >
+    <mat-icon>keyboard_arrow_left</mat-icon>
+    Previous
+  </button>
+  <button
+    matFab
+    class="button-nav"
+    (click)="navPokemon('next')"
+    [disabled]="nextDisabled"
+  >
+    Next
+    <mat-icon>keyboard_arrow_right</mat-icon>
+  </button>
+</div>
